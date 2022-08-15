@@ -1,0 +1,15 @@
+.header-logo {
+  display: flex;
+  align-items: center;
+
+  margin-top: -5px;
+  &__title {
+    font-size: 1.875rem;
+    display: block;
+  }
+  &__image {
+    display: block;
+
+    margin-right: 10px;
+  }
+}

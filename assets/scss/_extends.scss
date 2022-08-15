@@ -1,0 +1,44 @@
+@mixin title($color) {
+  @include lg-min {
+   margin: 0 80px 14px;
+  }
+  @include lg-md {
+   margin: 0 60px 14px;
+  }
+  @include md {
+   margin: 0 0 14px;
+  }
+ 
+   text-align: center;
+ 
+   color: $color;
+ 
+   font-size: 2rem;
+ }
+ 
+ @mixin description($color) {
+   text-align: center;
+   
+   color: $color;
+ 
+   font-size: 1.25rem;
+   line-height: 1.2;
+   @include lg-min {
+     margin: 0 80px 86px;
+   }
+   @include lg-md {
+    margin: 0 60px 60px;
+   }
+   @include md {
+    margin: 0 0 40px;
+   }
+ }
+ 
+ @mixin form-elements {
+   min-height: 50px;
+ 
+   border: none;
+   border-radius: 4px;
+   outline: none;
+ }
+ 

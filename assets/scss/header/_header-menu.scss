@@ -1,0 +1,12 @@
+.header-menu {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding-top: 30px;
+  @include md-min {
+    min-height: 140px;
+  }
+  @include md {
+    min-height: 100px;
+  }
+}
