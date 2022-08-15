@@ -1,6 +1,4 @@
-# Tinyone - одностраничный шаблон
+# Tinyone - one-page site
 
-> Макет в источнике:
+> Template:
 > https://designsmaz.com/freebies/tinyone-psd-one-page-template/
-
-Сложность шаблона - простой.
