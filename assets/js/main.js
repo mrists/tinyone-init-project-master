@@ -7,14 +7,17 @@ $(document).ready(function () {
   let isShow = false;
   let isStop = true; 
   /* menu */
-
+  
   /* slider */
   let $slides = $('.slide');
   let $indContainer = $('.indicators');
   let $indItems = $('.indicator');
+  let $pausePlayBtn = $('#pausePlayBtn');
+  let pauseBtn = '<i class="fa fa-pause-circle"></i>';
+  let playBtn = '<i class="fa fa-play-circle"></i>';
   let currentSlide = 0;
   let playbackStatus = true;
-  const carouselInterval = 5000;
+  const carouselInterval = 2000;
   const movedInterval = 500;
   /* slider */
 
@@ -72,22 +75,33 @@ $(document).ready(function () {
 
   let slideInterval = setInterval(gotoNextSlide, carouselInterval);
 
-  function pauseSlideShow(time) {
+  function playSlideShow() {
+    console.log('playSlideShow has been used');
+    playbackStatus = !playbackStatus
+    slideInterval = setInterval(gotoNextSlide, carouselInterval);
+    $pausePlayBtn.html(pauseBtn);
+  }
+
+  function pauseSlideShow() {
     if (playbackStatus) {
+      console.log('pauseSlideShow has been used');
       playbackStatus = !playbackStatus;
       clearInterval(slideInterval);
+      $pausePlayBtn.html(playBtn);
     }
-    if (time) setTimeout(() => {
-      slideInterval = setInterval(gotoNextSlide, carouselInterval);
-      playbackStatus = !playbackStatus;
-    }, time)
+  }
+
+  function pausePlay() {
+    console.log('pausePlay has been used');
+    playbackStatus ? pauseSlideShow() : playSlideShow(); 
   }
 
   let clickIndicatorBtn = (e) => {
-    pauseSlideShow(carouselInterval);
+    pauseSlideShow();
     gotoNSlide(+e.target.getAttribute('data-slide-to'));
   };
 
   $indContainer.on('click', '.indicator', clickIndicatorBtn);
+  $pausePlayBtn.on('click', pausePlay);
   /* slider */
 });

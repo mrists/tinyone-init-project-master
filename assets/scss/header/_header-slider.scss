@@ -1,6 +1,7 @@
 .header-slider {
   display: grid;
   overflow: hidden;
+  position: relative;
 
   @include md-min {
     grid-template-rows: minmax(500px, max-content) 100px;
@@ -66,7 +67,7 @@
   &__description {
     margin: 0;
 
-    color: #555555;
+    color: $color-gray;
 
     line-height: 1.25;
 
@@ -105,7 +106,7 @@
     }
     a:hover,
     a:focus {
-      text-shadow: 0 0 15px #ffffff;
+      text-shadow: 0 0 15px $color-light;
     }
   }
   &.active {
@@ -139,10 +140,40 @@
 
   opacity: 0.5;
   border-radius: 7.5px;
-  background-color: #ffffff;
+  background-color: $color-light;
   &.active {
     opacity: 1;
   }
 }
+.pause-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pause-control {
+  position: absolute;
+  z-index: 2;
+  i {
+    padding: 0.1em;
+    color: #FFEF00;
+    z-index: 2;
+    opacity: 0;
+
+    transition: opacity 0.5s;
+
+    @include md-min {
+      font-size: 18rem;
+    }
+    @include md {
+      font-size: 15rem;
+    }
+  }
+  &:hover i {
+    opacity: 0.6;
+  }
+}
+
 
 
