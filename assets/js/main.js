@@ -17,7 +17,7 @@ $(document).ready(function () {
   let playBtn = '<i class="fa fa-play-circle"></i>';
   let currentSlide = 0;
   let playbackStatus = true;
-  const carouselInterval = 2000;
+  const carouselInterval = 5000;
   const movedInterval = 500;
   /* slider */
 
